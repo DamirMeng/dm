@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>评星</title>
+    <link href="font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+	
+.xh-rater li {
+	 
+        float:left;
+        width:20px;
+        height:25px;
+        list-style:none;
+       
+      }
+      
+    .xh-rater{unicode-bidi:bidi-override;direction:rtl;float:left;}
+        i:hover{cursor:pointer}
+        .fa-star-o:hover:before,
+      ~i{ content:"\f005";color:gold;}
+    </style>
+</head>
+<body>
+<ul class="xh-rater">
+    <li><a href="javascript:;"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
+    <li><a href="javascript:;"><i class="fa1 fa-star-o" aria-hidden="true"></i></a></li>
+    <li><a href="javascript:;"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
+    <li><a href="javascript:;"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
+    <li><a href="javascript:;"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
+</ul>
+<script type="text/javascript">
+var x = document.querySelectorAll('li');
+	  document.querySelector('ul').addEventListener("click", function (e) { 
+	  nth=e.srcElement||e.target;
+	  for(i=0;i<x.length;i++) x[i].classList.replace('fa-star','fa-star-o');
+	  for(i=x.length;i>0;i--){
+        x[i-1].classList.replace('fa-star-o','fa-star');
+	    if(x[i-1]==nth)break;
+		}
+	})
+</script>
+</body>
+</html>
